@@ -19,7 +19,7 @@ public class Palindrom {
 
 		// die zweite Haelfte muss nun so vom Stack kommen!
 		for (; i < cs.length; i++)
-			if (stack.pop() != cs[i])
+			if (!stack.pop().equals(cs[i]))
 				return false;
 
 		return true;
