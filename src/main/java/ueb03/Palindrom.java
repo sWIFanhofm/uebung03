@@ -5,7 +5,7 @@ public class Palindrom {
 		if (s.length() == 1)
 			return true;
 
-		Stack stack = new StackImpl();
+		Stack<Character> stack = new StackImpl<>();
 		char[] cs = s.toLowerCase().replaceAll(" ", "").toCharArray();
 
 		// die erste Haelfte auf den Stack legen
@@ -19,7 +19,7 @@ public class Palindrom {
 
 		// die zweite Haelfte muss nun so vom Stack kommen!
 		for (; i < cs.length; i++)
-			if (!stack.pop().equals(cs[i]))
+			if (stack.pop() != cs[i])
 				return false;
 
 		return true;
